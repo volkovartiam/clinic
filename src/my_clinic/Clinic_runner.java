@@ -1,11 +1,21 @@
+package my_clinic;
+
+
 import java.util.Scanner;
 
 
+/*
+*    
+*  @ volkov_artiam
+*  @ 11.05.2019
+* 
+* */
+
 public class Clinic_runner {
 
-	public static int [] id = {1,0,1,1,4,4,5,5,8,9};
+/*	public static int [] id = {1,0,1,1,4,4,5,5,8,9};
 	static String [] name_of_clients = new String [10];
-	
+*/	
 	
 //	for (i=0;i<10;i++) {
 //		name_of_client
@@ -52,21 +62,7 @@ public class Clinic_runner {
 		clinic.printClinicClients();		
 		
 		
-/*			
-		Client С_1 = new Client(78,"Bars");
-		Client С_2 = new Client(78,"Has");
-		Client С_3 = new Client(78,"Bas");
 
-		
-		
-		name_of_clients[0] = С_1.getClient();
-		System.out.println(name_of_clients[0]);
-		
-		name_of_clients[0] = С_1.setClient("Kok");
-		System.out.println(name_of_clients[0]);
-		
-*/			
-	}
 	
 	/* 1  Как сделать так, чтобы id не мог повторяться ? Второстепенно
 	 * 2  Создать класс клиника, где будет задано количество клиентов ? к размышлению
@@ -75,9 +71,32 @@ public class Clinic_runner {
 	 * 5 Удалять клиента
 	 * 19-01 на видео 
 	 * 
+	 * Можно добавить метод изменения имени животного
+	 * Удаления только фамилии клиентаб имени животного 
 	 * 
+	 * 
+	 * При работе с программами требуется определять её функции (использовать блокнот, доску и тп) и как 
+	 * их протестировать
+	 *  и последовательно их реализовать (с последующем тестированиес)
+	 *  
+	 *  public - 
+	 *  protected - 
+	 *  default -
+	 *  private -
+	 *  
+	 *  Инкапсуляция - это 
+	 *  Наследование - это
+	 *  Композиция - это
+	 *  Полиморфизм - 
+	 *  интерфейс - 
+	 *  @override - указывает есть ли метод который будет перегружен
+	 *  
+	 *  
+	 *  1
+	 *  
+	 *  
 	 * */
 	
 	
-	
+	}
 }	
