@@ -17,9 +17,7 @@ public class Clinic_runner {
 	static String [] name_of_clients = new String [10];
 */	
 	
-//	for (i=0;i<10;i++) {
-//		name_of_client
-//	}
+
 	
 	public static void main (String [] args) {
 	
