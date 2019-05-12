@@ -5,7 +5,7 @@ package my_clinic;
  *  и методы их определения
  *  @ volkov_artiam
  *  @ 11.05.2019
- * 
+ *   
  * 
  * */
 
