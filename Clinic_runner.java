@@ -19,51 +19,72 @@ import java.util.ArrayList;
 
 public class Clinic_runner {
 
-	static int size = 10 ; 	/*задается количество клиентов для фирмы*/
-
 	
 	public static void main (String [] args) {
 	
-		 List <Client> client = new ArrayList <Client>();
+		 List <Client> clients = new ArrayList <Client>();
 		 Clinic clinic = new Clinic ();
+		 Interact interact1 = new Interact ();
 		
 
-		client.add(new Client ("0","Ivanov","Dog"));	
-		client.add(new Client ("1","Nov","Cat"));	
-		client.add(new Client ("2","Hov","Dragon"));	
-	
-		client.add(new Client ("3","Тгuvanov","Bird"));	
-		client.add(new Client ("4","Iov","Bool"));	
-		client.add(new Client ("5","Hover","Bool"));	
-		
-		client.add(new Client ("6","Ponov","Puppy"));	
-		client.add(new Client ("7","Cov","Dog"));	
-		client.add(new Client ("8","Hover","Cat"));	
+		 clients.add(new Client ("0","Ivanov","Dog"));	
+		 clients.add(new Client ("1","Nov","Cat"));	
+		 clients.add(new Client ("2","Hov","Dragon"));	
+		 clinic.addClients( clients);
 
-		client.add(new Client ("9","Over","Cat"));	
-	
+		 interact1.consoleInputName();
+/*		 
+	     Scanner in = new Scanner(System.in);
+	     System.out.println("Input name: ");
+	     String name = in.next();
+	     
+//	     String Id = "00";
+//	     String pets = "100";
+	     
+	     System.out.println("Input Id: ");
+	     String Id = in.next();
 
-		
-		clinic.printClinicClients(client);
+	     // Проверка на оригинальность ID
+	     
+	     System.out.println("Input pets: ");
+	     String pets = in.next();
 
-		
-		clinic.findPetsByClients ("Hover", client);			// Выводим информацию о клиенте с фамилией
+	     System.out.println("Если хотите добавить клиента нажмите 1 ");
+	     String answer = in.next();
+	     
+	     System.out.println(answer);
+	     
+	     if (  answer.equals("1")  ) {
+			 clients.add(new Client (Id,name ,pets));	
+	     }
+	     else {
+	    	 System.out.println("Ваши введенные данные не будут сохранены ");
+	     } 
+
+*/	     
+	     
+		 clinic.printClients();
+	//       in.close();
+	     
 
 
-		clinic.findClientsbyPets ("Cat" , client);			// Вывод информации о клиентах с животным
-		
-		
-		
-		clinic.changeClientsname ("Over", "9",  "Ivanovsky" , client);	// изменяем фамилию (имеется уточнение - номер ID)
-		clinic.printClinicClients(client);	
+/*	
+		 clinic.addClients( clients);
+		 clinic.printClients();
+		 
+		 clients.add(new Client ("3","Hover","Dog"));
+		 clinic.printClients();		 
+		 
 
+		clinic.findClients("Hov")	;	
+		clinic.findPets ("Dog");			// Вывод информации о клиентах с животным
 		
-		clinic.deleteClient ("Ivanovsky", "10", client);		// пытаемся удалить клиента с неверным ID
-		
-		clinic.deleteClient ("Ivanovsky", "9", client);			// удаляем клиента по имени и Id
-		
-		clinic.printClinicClients(client);	
-		
-	
+		clinic.changeName ("Hov", "3",  "Kotov" )	;	
+		clinic.printClients();
+		 
+		clinic.deleteClient ("Hov", "2" );	
+		clinic.printClients();
+*/		
+
 	}
 }	

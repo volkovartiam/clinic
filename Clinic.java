@@ -22,117 +22,132 @@ import java.util.ArrayList;
 
 public class Clinic {
 
-	/*Для работы класса нужны экземпляры класса Client*/	
-	public List <Client> clientsList = new ArrayList <Client>();
+		/*Для работы класса нужны экземпляры класса Client*/	
+		public List <Client> clientsList = new ArrayList <Client>();
+		
+		
+		//////////////////////////////////////////////////////////////////
+		/**/
+		public List addClients (List <Client> clientsList) {
+				return this.clientsList = clientsList;
+		}
 
-	
-
-	
-		/*метод выводи список имеющихся клиентов клиентов*/
-		public void printClinicClients(List <Client> clientsList) {
+		//////////////////////////////////////////////////////////////////	
+		/*метод выводит список имеющихся клиентов клиентов*/
+		public void printClients() {
 				
 				String textForClients = "Выводим имеющийся список клиентов"; 
 				System.out.println(textForClients);
 				
-				for (int i = 0; i < clientsList.size(); i++) {
-					if (clientsList.get(i) == null) {
-						System.out.println(clientsList.get(i));
-						
-					} else {
-					System.out.println(    " " + clientsList.get(i).getId() 
-										 + " " + clientsList.get(i).getClient() 
-										 + " " + clientsList.get(i).getPets() );
-					}
+				for (Client x : clientsList) {
+					
+					System.out.println(    " " + x.getId() 
+									     + " " + x.getName() 
+										 + " " + x.getPets() );
 				}
-			System.out.println();
+						
+				System.out.println();
 		}
-
+		//////////////////////////////////////////////////////////////////
 		
-		
-		/**что за животное по клиенту*/ 
-		public void findPetsByClients (String clientName, List <Client> clientsList){
+		//////////////////////////////////////////////////////////////////
+		/**найти клиента*/ 
+		public void findClients (String clientName){
 		
 			String textForFindPets = "Информация о клиентах с  фамилией: "; 
 			System.out.println(textForFindPets  +  clientName);
 
-			for (int i = 0; i < clientsList.size(); i++) {
+			for (Client x : clientsList ) {
 				// Проверка на ноль должна быть первостепенной
-				if( ( clientsList.get(i) != null )   &&  ( clientsList.get(i).getClient()  == clientName ) ) {
+				if(  x.getName()  == clientName  ) {
 	 		
-					System.out.println(       " " + clientsList.get(i).getId() 
-											+ " " + clientsList.get(i).getClient() 
-											+ " " + clientsList.get(i).getPets() );
+					System.out.println(       " " + x.getId() 
+											+ " " + x.getName() 
+											+ " " + x.getPets()   );
 				}
 			}
 		System.out.println();
 		}
 	
-	 
+		//////////////////////////////////////////////////////////////////
+
 		
-		/**клиент по животному*/ 
-		public void findClientsbyPets (String Pets , List <Client> clientsList) {
+		//////////////////////////////////////////////////////////////////
+		/**найти животное*/ 
+		public void findPets (String Pets ) {
 		 
 			String textfindClientsbyPets =  "Информация о клиентах с животным: ";
 			System.out.println(textfindClientsbyPets + Pets ); 	
 		
-				for (int i=0; i < clientsList.size(); i++){
-					// Проверка на ноль и проверка есть ли данное животное в списках
-					if ( (clientsList.get(i) != null)   &&  ( clientsList.get(i).getPets() == Pets) ) {
-						System.out.println(    	  " " + clientsList.get(i).getId() 
-												+ " " + clientsList.get(i).getClient() 
-												+ " " + clientsList.get(i).getPets() );
+				for (Client x : clientsList){
+
+					if (   x.getPets() == Pets)  {
+						System.out.println(    	  " " + x.getId() 
+												+ " " + x.getName() 
+												+ " " + x.getPets() );
 				}
 			}
 		System.out.println();
 		}
-	 
-	 
-		/**изменение имени клиента */ 
-		public void changeClientsname (String name_before, 
-											String Id,  
-												String name_after,
-													List <Client> clientsList) {
-			
-			String textchangeClientsname1 = "Будет произведена замена фамилии  ";
-			String textchangeClientsname2 = "  на фамилию  ";
-			
-			System.out.println(textchangeClientsname1 +  name_before 
-													  +  textchangeClientsname2  +  name_after + "\n");
-		 
-			for (int i = 0; i < clientsList.size(); i++) {
-			 	
-				if (  (clientsList.get(i).getClient() == name_before  ) && ( clientsList.get(i).getId() == Id )  ) {
-					// сообщении о несоответствиях для каждого метода + указание ид
-					clientsList.get(i).setClient(name_after);
+		
+		//////////////////////////////////////////////////////////////////
+		
+		
+		
+		//////////////////////////////////////////////////////////////////		
+		public void changeName (String name_before, 
+												String Id,  
+													String name_after) {
+				
+				String textchangeClientsname1 = "Будет произведена замена фамилии  ";
+				String textchangeClientsname2 = "  на фамилию  ";
+				
+				System.out.println(textchangeClientsname1 +  name_before 
+														  +  textchangeClientsname2  +  name_after + "\n");
+			 
+				for (Client x : clientsList){
+				 	
+					if (  (x.getName() == name_before  ) && ( x.getId() == Id )  ) {
+						// сообщении о несоответствиях для каждого метода + указание ид
+						x.setName(name_after);
+					}
 				}
 			}
-		}
-	 
-	 
-			/**метод удаления клиента*/
-		public void deleteClient (String name, String Id, List <Client> clientsList ) {
 		 
+		//////////////////////////////////////////////////////////////////			
+
+		
+		//////////////////////////////////////////////////////////////////		
+		/**метод удаления клиента*/
+		public void deleteClient (String name, String Id ) {
+	 
 			String textdeleteClient1 = "Вы хотите удалить клиента с с фамилией " ; 
 			String textdeleteClient2 = " и ID " ; 
 			System.out.println(textdeleteClient1  +  name  
-												  + textdeleteClient2 + Id);
-	 
+											  	  + textdeleteClient2 + Id);
+ 
 			boolean deleted = false;			// по умолчанию удалять не нужно
-		 
-				for (int i = 0; i < clientsList.size(); i++) {
-					if ( (clientsList.get(i).getClient() == name )  && ( clientsList.get(i).getId() == Id ) ) {
-			
-						clientsList.remove(i);
-						deleted = true;
-					}
-				}
-	
-				if (deleted){
-					System.out.println("Данные о клиенте успешно удалены  \n");
-				} else {  
-					System.out.println(" ID или имя клиента введены не правильно \n") ;
-				} 
-		 
-		}
+			int index_to_remove = -1;
 		
+				for (Client x : clientsList){
+			
+					if ( (x.getName() == name )  && ( x.getId() == Id ) ) {
+					index_to_remove = clientsList.indexOf(x);
+					deleted = true;
+					}
+			}
+
+			if (deleted){
+				clientsList.remove(index_to_remove);
+				System.out.println("Данные о клиенте успешно удалены  \n");
+			
+			} else {  
+				System.out.println(" ID или имя клиента введены не правильно \n") ;
+			} 
+	 
+	}		
+		
+		//////////////////////////////////////////////////////////////////		
+
+
 }

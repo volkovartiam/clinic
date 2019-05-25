@@ -17,15 +17,18 @@ public class Client {
 
 	/**Задаются id, имя клиента, тип животного */
 	private String id;
-	public String  client;
+	public String  name;
 	public String pets;
 
+
+	
+	
 	
 	
    	
 		/**Конструктор позволяет сразу установить  id, имя клиета и тип животного*/
-	    Client (String id, String client, String pets){
-	    	this.client = client;
+	    Client (String id, String name, String pets){
+	    	this.name = name;
 	    	
 	    	this.id = id;
 	    	
@@ -35,14 +38,14 @@ public class Client {
 	    
 	    
 	    /**Устанавливает имя клиента*/
-	    public String setClient (String client) {
-	    	return this.client = client;
+	    public String setName (String name) {
+	    	return this.name = name;
 	    }
 	
 	
 	    /** Выдает имя клиента*/
-	    public String getClient () {
-	    	return client;
+	    public String getName () {
+	    	return name;
 	    }
 	
 
@@ -63,5 +66,21 @@ public class Client {
 	    public String getPets () {
 	    	return pets;
 	    }
+	    
+	    
+		/*метод выводи список имеющихся клиентов клиентов*/
+		public void printClinicClients() {
+				
+					System.out.println(    " " + getId() 
+										 + " " + getName() 
+										 + " " + getPets() );
+					
+		//	System.out.println();
+		}
+	    
+	    
+	    
+	    
+	    
 	    
 }
